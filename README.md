@@ -16,7 +16,7 @@ This project is configured for Wrangler with `pages_build_output_dir = "."`.
 
 In Cloudflare Pages project settings, leave the build command empty and set the build output directory to `.`. Do not use `npx wrangler deploy`, which is the Workers command.
 
-The Pages deployment account is `b548c5b8f5733cc2be77af66273f6aa7`. The `CLOUDFLARE_API_TOKEN` used by the Pages build must be a token created for this account with Pages project read/write permission (and account read permission). A token can authenticate successfully but still return API error `10000` when it lacks the Pages permission.
+The `CLOUDFLARE_API_TOKEN` used by the Pages build must be a token created for the account that owns the Pages project, with Pages project read/write permission (and account read permission). A token can authenticate successfully but still return API error `10000` when it lacks the Pages permission. Pages configuration does not accept `account_id` in `wrangler.toml`.
 
 If a deploy command is required, use the Pages command:
 
